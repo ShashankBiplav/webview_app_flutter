@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import './screens/splash_screen.dart';
-import './screens/webview_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,9 +10,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return MaterialApp(
-      title: 'Welcome to Flutter',
+      title: 'Ganveer',
+      theme: ThemeData(primaryColor: Colors.orangeAccent,
+      accentColor: Colors.green[600]),
       home: Scaffold(
-        body: WebviewScreen(),
+        body:SplashScreen(),
       ),
     );
   }

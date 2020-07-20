@@ -9,6 +9,8 @@
 .history
 .svn/
 assets
+ios/Runner/Assets.xcassets
+android/app/src/main/res
 
 # IntelliJ related
 *.iml

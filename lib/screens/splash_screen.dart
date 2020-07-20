@@ -13,10 +13,12 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-        Duration(milliseconds: 700),
+        Duration(milliseconds: 1000),
         () => Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (BuildContext context) => WebviewScreen('https://ganveer.com'))));
+            builder: (BuildContext context) =>
+                WebviewScreen('https://ganveer.com'))));
   }
+
   @override
   Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;
@@ -49,12 +51,15 @@ class _SplashScreenState extends State<SplashScreen> {
             ],
           ),
           Column(
+            mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: deviceSize.width*0.25),
-                child: Text('Powered by: BWJ Tech Solutions'),
+              new Positioned(
+                child: new Align(
+                  alignment: FractionalOffset.bottomCenter,
+                  child: Text('Powered by: BWJ Tech Solutions'),
+                ),
               ),
             ],
           ),
